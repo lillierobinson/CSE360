@@ -141,6 +141,73 @@ public class SimpleList {
 		
 			return -1;
 		}
+	
+	public void append(int to_be_added) {
+		//when the array is full, increase size 
+		if(list.length == count) {
+					
+		//calculate the new size of the array 
+		int size = (int) (list.length * 1.5);
+			
+		int[] newArray = new int[size];
+				
+		//copy the list into the array of a new size
+		for(int i = 0; i < list.length; i++) {
+			newArray[i] = list[i];
+		}
+				
+				
+		//reinstate list
+		list = newArray;
+				
+		}//end if statement
+		
+		
+		//iterate through array to enter the new element into the first empty position of the array 
+		for(int i = 0; i < list.length; i++) {
+			if(list[i] == 0) {
+				list[i] = to_be_added;
+				break;
+			}
+		}
+		
+	}
+	
+	public int first() {
+		
+		if(list[0] == 0) {
+			return -1;
+		}
+		
+		return list [0];
+	}
+	
+	public int end() {
+		
+		if(list[0] != 0) {
+		
+		for(int i = 0; i < list.length; i++) {
+			if(list[i + 1] == 0) {
+				return list[i];
+			}
+		}
+		}
+		
+		return -1;
+		
+	}
+	
+	public int size() {
+		int size = 0;
+		//count the number of items in array list
+		for(int k = 0; k < list.length; k++) {
+			
+			if(list[k] != 0) {
+				size++;
+			}
+		}
+		return size;
+	}
 }
 		
 	

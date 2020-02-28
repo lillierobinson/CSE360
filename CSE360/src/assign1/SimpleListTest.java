@@ -125,6 +125,100 @@ class SimpleListTest {
 
 	}
 	
+	@Test
+	void test_append() {
+		//fail("Not yet implemented");
+		
+		//create an object of type SimpleList
+		SimpleList sl = new SimpleList();
+		
+		//add the number 4 to the array 
+		sl.Add(4);
+		
+		//add the number 8 to the array
+		sl.Add(8);
+		
+		//add the number 2 to the array
+		sl.Add(2);
+		
+		sl.append(5);
+		
+		//create an integer to store the observed value recorded in add()
+		int append_test = sl.count();
+		
+		//test if the expected value is the same as the add_test value
+		assertEquals(4, append_test); 
+		
+	}
+	
+	@Test
+	void test_first() {
+		//fail("Not yet implemented");
+		
+		//create an object of type SimpleList
+		SimpleList sl = new SimpleList();
+		
+		//add the number 4 to the array 
+		sl.Add(4);
+		
+		//add the number 8 to the array
+		sl.Add(8);
+		
+		//add the number 2 to the array
+		sl.Add(2);
+		
+		//create an integer to store the observed value recorded in add()
+		int first_test = sl.first();
+		
+		//test if the expected value is the same as the add_test value
+		assertEquals(2, first_test); 
+		
+	}
+	
+	@Test
+	void test_end() {
+		//fail("Not yet implemented");
+		
+		//create an object of type SimpleList
+		SimpleList sl = new SimpleList();
+		
+		//add the number 4 to the array 
+		sl.Add(4);
+		
+		//add the number 8 to the array
+		sl.Add(8);
+		
+		//add the number 2 to the array
+		sl.Add(2);
+		
+		//create an integer to store the observed value recorded in add()
+		int end_test = sl.end();
+		
+		//test if the expected value is the same as the add_test value
+		assertEquals(4, end_test); 
+		
+	}
+	
+	@Test
+	void test_size() {
+		
+		SimpleList sl = new SimpleList();
+		
+		//add the number 4 to the array 
+		sl.Add(4);
+				
+		//add the number 8 to the array
+		sl.Add(8);
+						
+		//add the number 2 to the array
+		sl.Add(2);
+		
+		
+		int size_test = sl.count();
+		
+		assertEquals(3, size_test);
+
+	}
 	
 	
 	
