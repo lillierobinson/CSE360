@@ -6,27 +6,53 @@ public class SimpleList {
 	private int[] list;
 	private int count;
 	
+	
 	public SimpleList() {
 		count = 0;
-		int num = 10;
-		list = new int[num];
+		list = new int[10];
 	}
 	
 	public void Add(int to_be_added) {
 		
-		count = 0;
+		//when the array is full, increase size 
+		if(list.length == count) {
+			
+		//calculate the new size of the array 
+		int size = (int) (list.length * 1.5);
 		
-		for (int i = 0; i < list.length; i++) {
-			if (list[i] == 0) {
-				list[i] = to_be_added;
-				count++;
-				break;
-			}
+		int[] newArray = new int[size];
+		
+		//copy the list into the array of a new size
+		for(int i = 0; i < list.length; i++) {
+			newArray[i] = list[i];
+		}
+		
+		
+		//reinstate list
+		list = newArray;
+		
+		}//end if statement
+		
+		//shift all the elements over
+		for (int i = count; i > 0; i--) {
+			
+			list[i] = list[i - 1];
+			
 		}		
+		
+		//initialize the first element of the array 
+		list[0] = to_be_added;
+		
+		count();
+		
+		
 	}
+		
+				
 
 
 	public void Remove(int to_be_removed) {
+		
 		
 		//create a reference variable for help with moving
 		int index = 0;
@@ -38,8 +64,22 @@ public class SimpleList {
 				list[index++] = list[i];
 			}
 		}
-		int num = (int) (10*.75);
-		System.out.println(num);
+
+		//calculate the size that the newArray will be and call count for accuracy   
+		int size = (int) (list.length * 0.75);
+		count = count();
+		
+		//call only if 25% of array is empty 
+		if(count <= size) {
+			int newArray[] = new int[size];
+			
+			for(int i = 0; i <= size - 1; i++) {
+				newArray[i] = list[i];
+			}
+			
+			list = newArray;
+		}
+		
 		
 	}
 	

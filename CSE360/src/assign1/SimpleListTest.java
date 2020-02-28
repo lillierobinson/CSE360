@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class SimpleListTest {
 
+	
 	@Test
 	void test_add() {
 		//fail("Not yet implemented");
@@ -21,7 +22,7 @@ class SimpleListTest {
 		
 		//add the number 2 to the array
 		sl.Add(2);
-
+		
 		//create an integer to store the observed value recorded in add()
 		int add_test = sl.count();
 		
@@ -75,7 +76,7 @@ class SimpleListTest {
 		String str = sl.toString();
 		
 		//test if the expected value is the same as observed for toString()
-		assertEquals("4 8 2", str);
+		assertEquals("2 8 4", str);
 	}
 	
 	@Test
@@ -97,7 +98,7 @@ class SimpleListTest {
 		int search_test = sl.search(2);
 		
 		//test if the expected and observed match for search()
-		assertEquals(2, search_test);
+		assertEquals(0, search_test);
 		
 		
 		
